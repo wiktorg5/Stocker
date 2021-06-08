@@ -37,6 +37,16 @@
    grid-area: choose;
    background-color: $secondary-color;
    border-radius: 10px;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
+   flex-wrap: nowrap;
+   &input[type="text"] {
+      width: 60%;
+   }
+   .btn {
+      width: 30%;
+   }
 }
 .description {
    grid-area: description;

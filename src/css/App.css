@@ -95,6 +95,25 @@
   grid-area: choose;
   background-color: #0099ff;
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.chooseinput[type="text"] {
+  width: 60%;
+}
+
+.choose .btn {
+  width: 30%;
 }
 
 .description {

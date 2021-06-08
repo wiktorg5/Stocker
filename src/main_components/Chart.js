@@ -45,14 +45,14 @@ const Chart = () => {
             <div className="choose">
                 <form onSubmit={getData}>
                     <input type="text" className="symbol" value={symbol} onChange={getSymbol}></input>
-                    <button type="submit">Search</button>
+                    <button type="submit" className="btn">Search</button>
                 </form>
             </div>
             <div className="chart"></div>
             <div className="description">
-                {overview.Name}
-                {overview.Currency}
-                {overview.Exchange}
+                <span>{overview.Name}</span>
+                <span>{overview.Exchange}</span>
+                <span>{overview.Currency}</span>
             </div>
             <button className="to_comparison">Add to Comparison</button>
             </div>

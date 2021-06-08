@@ -1,5 +1,4 @@
 import './css/App.css';
-import React, {useState, useEffect} from 'react';
 import Chart from "./main_components/Chart"
 import Logo from "./main_components/Logo"
 import Comparison from "./main_components/Comparison"

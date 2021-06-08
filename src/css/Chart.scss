@@ -32,6 +32,8 @@
    grid-area: chart;
    background-color: lighten($primary-color, 10%);
    border-radius: 10px;
+   display: flex;
+   align-items: center;
 }
 .choose {
    grid-area: choose;

@@ -46,8 +46,25 @@
   -ms-grid-row: 2;
   -ms-grid-column: 2;
   grid-area: choose;
-  background-color: #0099ff;
+  background-color: #007acc;
   border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.choose .form_chart {
+  width: 90%;
+  height: 70%;
+  padding: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,16 +74,34 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
 }
 
-.chooseinput[type="text"] {
+.choose .form_chart input[type="text"] {
   width: 60%;
+  height: 80%;
+  border-radius: 10px;
+  border: solid;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1.5rem;
 }
 
-.choose .btn {
+.choose .form_chart input[type="text"]:focus {
+  outline: none;
+}
+
+.choose .form_chart .btn {
   width: 30%;
+  height: 80%;
+  border: 2px solid #1a1a1a;
+  border-radius: 10px;
+  background-color: #4d4d4d;
+  color: white;
+  font-size: 1.8rem;
+}
+
+.choose .form_chart .btn:hover {
+  background-color: #343434;
 }
 
 .description {
@@ -82,7 +117,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   color: white;
+  font-size: 1.5rem;
+}
+
+.description .prefix {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 
 .to_comparison {

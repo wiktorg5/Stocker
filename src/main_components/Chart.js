@@ -43,16 +43,16 @@ const Chart = () => {
         <div className="Chart">
             <div className="MainChart">
             <div className="choose">
-                <form onSubmit={getData}>
+                <form className="form_chart" onSubmit={getData}>
                     <input type="text" className="symbol" value={symbol} onChange={getSymbol}></input>
                     <button type="submit" className="btn">Search</button>
                 </form>
             </div>
             <div className="chart"></div>
             <div className="description">
-                <span>{overview.Name}</span>
-                <span>{overview.Exchange}</span>
-                <span>{overview.Currency}</span>
+                <span><span className="prefix">Company Name: </span>{overview.Name}</span>
+                <span><span className="prefix">Exchange: </span>{overview.Exchange}</span>
+                <span><span className="prefix">Currency: </span>{overview.Currency}</span>
             </div>
             <button className="to_comparison">Add to Comparison</button>
             </div>

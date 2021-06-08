@@ -14,31 +14,26 @@ const Chart = () => {
         console.log(symbol);
     }
 
-    async function getDataDaily (e){
+    async function getData (e){
         e.preventDefault();
         const data = await fetch(linkDaily);
-        const fetched = await data.json();
+        const fetchedDaily = await data.json();
 
-        console.log(fetched);
+        console.log(fetchedDaily);
+    
+        const overview = await fetch(linkOverview);
+        const fetchedOverview = await overview.json();
+
+        console.log(fetchedOverview);
         
-        return fetched;
-    }
-
-    async function getDataOverview (e){
-        e.preventDefault();
-        const data = await fetch(linkOverview);
-        const fetched = await data.json();
-
-        console.log(fetched);
-        
-        return fetched;
+        return fetchedDaily, fetchedOverview;
     }
 
     return (
         <div className="Chart">
             <div className="MainChart">
             <div className="choose">
-                <form onSubmit={getDataDaily}>
+                <form onSubmit={getData}>
                     <input type="text" className="symbol" value={symbol} onChange={getSymbol}></input>
                     <button type="submit">Search</button>
                 </form>

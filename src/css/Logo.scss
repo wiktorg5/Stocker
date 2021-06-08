@@ -1,0 +1,35 @@
+@import "./variables.scss";
+
+$logo_image: url("../images/logo.jpg");
+
+.Logo {
+   width: 100vw;
+   height: 80vh;
+   background: linear-gradient(
+         to bottom,
+         rgba($gradient-color, 1),
+         rgba($gradient-color, 0.5)
+      ),
+      $logo_image;
+   background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.LogoImage {
+   background: $primary-color;
+   width: 50vw;
+   height: 20%;
+   opacity: 0.7;
+   border-radius: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.LogoText {
+   color: $secondary-color;
+   font-size: 7rem;
+   box-sizing: border-box;
+   font-weight: map-get($fonts, bold);
+   letter-spacing: 0.4rem;
+}

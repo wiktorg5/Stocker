@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,2GAAI;ADEZ,AAAA,OAAO,CAAC;EACL,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;EACZ,OAAO,EAAE,IAAI;EACb,gBAAgB,ECHH,OAAO;EDIpB,eAAe,EAAE,YAAY;EAC7B,WAAW,EAAE,MAAM;CACrB",
+    "sources": [
+        "Footer.scss",
+        "variables.scss"
+    ],
+    "names": [],
+    "file": "Footer.css"
+}

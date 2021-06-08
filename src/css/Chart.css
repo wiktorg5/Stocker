@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,500;1,700&display=swap");
+.Chart {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: url("../images/chart.png");
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 3px solid #0099ff;
+  border-top: 3px solid #0099ff;
+}
+
+.MainChart {
+  width: 80vw;
+  height: 90%;
+  background: #1a1a1a;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.1fr 1.5fr 0.5fr 0.08fr 1fr 0.1fr;
+      grid-template-columns: 0.1fr 1.5fr 0.5fr 0.08fr 1fr 0.1fr;
+  -ms-grid-rows: 0.05fr 0.4fr 0.05fr 2fr 0.1fr 0.5fr 0.05fr;
+      grid-template-rows: 0.05fr 0.4fr 0.05fr 2fr 0.1fr 0.5fr 0.05fr;
+      grid-template-areas: ". . . . . ." ". choose . . . ." ". . . . . ." ". chart chart . description ." ". chart chart . . ." ". chart chart . to_comparison ." ". . . . . .";
+}
+
+.chart {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 2;
+  grid-area: chart;
+  background-color: #343434;
+  border-radius: 10px;
+}
+
+.choose {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: choose;
+  background-color: #0099ff;
+  border-radius: 10px;
+}
+
+.description {
+  -ms-grid-row: 4;
+  -ms-grid-column: 5;
+  grid-area: description;
+  background-color: #343434;
+  border-radius: 10px;
+}
+
+.to_comparison {
+  -ms-grid-row: 6;
+  -ms-grid-column: 5;
+  grid-area: to_comparison;
+  background-color: #0099ff;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.to_comparison:hover {
+  background-color: #007acc;
+  cursor: pointer;
+}
+
+.to_comparison:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+/*# sourceMappingURL=Chart.css.map */

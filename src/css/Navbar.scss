@@ -1,0 +1,11 @@
+@import "./variables.scss";
+
+.Navbar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 10vh;
+   background: $primary-color;
+   z-index: 100;
+}

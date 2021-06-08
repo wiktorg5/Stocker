@@ -2,8 +2,8 @@
 .Logo {
   width: 100vw;
   height: 80vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(#333333), to(rgba(51, 51, 51, 0.5))), url("../images/logo.jpg");
-  background: linear-gradient(to bottom, #333333, rgba(51, 51, 51, 0.5)), url("../images/logo.jpg");
+  background: -webkit-gradient(linear, left top, left bottom, from(#262626), to(rgba(38, 38, 38, 0.5))), url("../images/logo.jpg");
+  background: linear-gradient(to bottom, #262626, rgba(38, 38, 38, 0.5)), url("../images/logo.jpg");
   background-size: cover;
   display: -webkit-box;
   display: -ms-flexbox;

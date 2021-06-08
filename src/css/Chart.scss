@@ -42,6 +42,9 @@
    grid-area: description;
    background-color: lighten($primary-color, 10%);
    border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+   color: white;
 }
 .to_comparison {
    grid-area: to_comparison;

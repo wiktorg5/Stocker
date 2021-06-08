@@ -5,6 +5,11 @@ import '../css/App.css'
 const Chart = () => {
 
     const [symbol, setSymbol] = useState('');
+    const [overview, setOverview] = useState({
+        Name:'',
+        Exchange:'',
+        Currency:''
+    })
     let linkDaily = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=YJ0EZ107WVSIQNS1`;
     let linkOverview = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=YJ0EZ107WVSIQNS1`
 
@@ -25,9 +30,14 @@ const Chart = () => {
         const fetchedOverview = await overview.json();
 
         console.log(fetchedOverview);
+
+        const {Name, Exchange, Currency} = fetchedOverview;
+        console.log(Name, Exchange, Currency);
+        setOverview({Name,Exchange,Currency})
         
-        return fetchedDaily, fetchedOverview;
+        return {fetchedDaily, fetchedOverview};
     }
+    
 
     return (
         <div className="Chart">
@@ -39,7 +49,11 @@ const Chart = () => {
                 </form>
             </div>
             <div className="chart"></div>
-            <div className="description"></div>
+            <div className="description">
+                {overview.Name}
+                {overview.Currency}
+                {overview.Exchange}
+            </div>
             <button className="to_comparison">Add to Comparison</button>
             </div>
         </div>

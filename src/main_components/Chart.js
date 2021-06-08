@@ -40,11 +40,7 @@ const Chart = () => {
             return item[0];
         }).reverse())
 
-        console.log(mappedPrice);
-        console.log(mappedDate);
 
-        
-    
         const overview = await fetch(linkOverview);
         const fetchedOverview = await overview.json();
 
@@ -85,7 +81,6 @@ const Chart = () => {
                 </form>
             </div>
             <div className="chart">
-                {console.log(mappedPrice)}
                     {
                         
                        

@@ -1,7 +1,7 @@
 # Stocker
-##Used Technologies
-###React.js
-###Chart.js
-###SCSS
+## Used Technologies
+### React.js
+### Chart.js
+### SCSS
 
  

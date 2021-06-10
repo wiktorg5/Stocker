@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState , useEffect} from 'react/cjs/react.development';
+import { useState } from 'react/cjs/react.development';
 import '../css/App.css';
 import {Line} from 'react-chartjs-2';
 

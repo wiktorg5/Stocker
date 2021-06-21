@@ -26,9 +26,10 @@ const Chart = () => {
 
     async function getData (e){
         e.preventDefault();
-        const data = await fetch(linkDaily);
-        const daily = await data.json();
-
+        try{
+            const data = await fetch(linkDaily);
+            const daily = await data.json();
+        
         let fetchedDaily = daily['Time Series (Daily)'];  
         let arrayFetchedDaily = Object.entries(fetchedDaily);
         
@@ -50,6 +51,9 @@ const Chart = () => {
         setOverview({Name,Exchange,Currency})
 
         setSubmitted(true);
+        }catch(err){
+            console.log(err);
+        }
         
         return {};
     }
@@ -76,7 +80,7 @@ const Chart = () => {
             <div className="MainChart">
             <div className="choose">
                 <form className="form_chart" onSubmit={getData}>
-                    <input type="text" className="symbol" value={symbol} onChange={getSymbol}></input>
+                    <input type="text" className="symbol" value={symbol} onChange={getSymbol} placeholder="Symbol.."></input>
                     <button type="submit" className="btn">Search</button>
                 </form>
             </div>

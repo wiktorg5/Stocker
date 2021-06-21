@@ -64,145 +64,11 @@
 }
 
 .MainChart {
-  width: 80vw;
+  width: 90vw;
   height: 90%;
   background: #1a1a1a;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border-radius: 10px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 0.1fr 1.5fr 0.5fr 0.08fr 1fr 0.1fr;
-      grid-template-columns: 0.1fr 1.5fr 0.5fr 0.08fr 1fr 0.1fr;
-  -ms-grid-rows: 0.05fr 0.4fr 0.05fr 2fr 0.1fr 0.5fr 0.05fr;
-      grid-template-rows: 0.05fr 0.4fr 0.05fr 2fr 0.1fr 0.5fr 0.05fr;
-      grid-template-areas: ". . . . . ." ". choose . . . ." ". . . . . ." ". chart chart . description ." ". chart chart . . ." ". chart chart . to_comparison ." ". . . . . .";
-}
-
-.chart {
-  -ms-grid-row: 4;
-  -ms-grid-row-span: 3;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 2;
-  grid-area: chart;
-  background-color: #343434;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.choose {
-  -ms-grid-row: 2;
-  -ms-grid-column: 2;
-  grid-area: choose;
-  background-color: #007acc;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-}
-
-.choose .form_chart {
-  width: 90%;
-  height: 70%;
-  padding: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.choose .form_chart input[type="text"] {
-  width: 60%;
-  height: 80%;
-  border-radius: 10px;
-  border: solid;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  font-size: 1.5rem;
-}
-
-.choose .form_chart input[type="text"]:focus {
-  outline: none;
-}
-
-.choose .form_chart .btn {
-  width: 30%;
-  height: 80%;
-  border: 2px solid #1a1a1a;
-  border-radius: 10px;
-  background-color: #4d4d4d;
-  color: white;
-  font-size: 1.8rem;
-}
-
-.choose .form_chart .btn:hover {
-  background-color: #343434;
-}
-
-.description {
-  -ms-grid-row: 4;
-  -ms-grid-column: 5;
-  grid-area: description;
-  background-color: #343434;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  color: white;
-  font-size: 1.5rem;
-}
-
-.description .prefix {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-.to_comparison {
-  -ms-grid-row: 6;
-  -ms-grid-column: 5;
-  grid-area: to_comparison;
-  background-color: #0099ff;
-  border-radius: 10px;
-  border: none;
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #1a1a1a;
-  -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.to_comparison:hover {
-  background-color: #007acc;
-  cursor: pointer;
-}
-
-.to_comparison:active {
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
 }
 
 .Navbar {
@@ -259,6 +125,6 @@
 
 body {
   margin: 0 !important;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 /*# sourceMappingURL=App.css.map */

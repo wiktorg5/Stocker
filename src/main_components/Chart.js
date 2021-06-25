@@ -2,34 +2,27 @@ import React from 'react';
 import { useState, useEffect } from 'react/cjs/react.development';
 import '../css/App.css';
 import { Line } from 'react-chartjs-2';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 
 const Chart = () => {
-	//overview and symbol states
-	const [symbol, setSymbol] = useState('');
-	const [overview, setOverview] = useState({
-		Name: '',
-		Exchange: '',
-		Currency: '',
-	});
-
-	//links
-	let linkDaily = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=YJ0EZ107WVSIQNS1`;
-	let linkOverview = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=YJ0EZ107WVSIQNS1`;
-
-	//chart data states
+	//data states
 	const [mappedPrice, setMappedPrice] = useState([]);
 	const [mappedDate, setMappedDate] = useState([]);
 
-	//chart state
 	const [states, setStates] = useState({
 		labels: mappedDate,
 		datasets: mappedPrice,
 	});
 
-	//if form submitted state
-	const [submitted, setSubmitted] = useState(false);
+	const [symbol, setSymbol] = useState('');
+	const [listSymbol, setListSymbol] = useState([]);
+	const [mappedSymbols, setMappedSymbols] = useState([]);
 
-	//getting symbol from input
+	//links
+	let linkDaily = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=YJ0EZ107WVSIQNS1`;
+	let linkOverview = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=YJ0EZ107WVSIQNS1`;
+
 	const getSymbol = (e) => {
 		let symbolInput = e.target.value.toUpperCase();
 		setSymbol(symbolInput);
@@ -46,11 +39,9 @@ const Chart = () => {
 	let value2 = Math.floor(Math.random() * 120);
 	let value3 = Math.floor(Math.random() * 78);
 
-	//taking data from json and making chart
 	async function getData(e) {
 		e.preventDefault();
 		try {
-			//getting daily data
 			const data = await fetch(linkDaily);
 			const daily = await data.json();
 
@@ -75,7 +66,6 @@ const Chart = () => {
 				},
 			]);
 
-			//mapping time
 			setMappedDate(
 				arrayFetchedDaily
 					.map((item) => {
@@ -88,11 +78,14 @@ const Chart = () => {
 			const overview = await fetch(linkOverview);
 			const fetchedOverview = await overview.json();
 
-			const { Name, Exchange, Currency } = fetchedOverview;
-			console.log(Name, Exchange, Currency);
-			setOverview({ Name, Exchange, Currency });
+			const over = {
+				Name: fetchedOverview.Name,
+				Exchange: fetchedOverview.Exchange,
+				Currency: fetchedOverview.Currency,
+				Symbol: symbol,
+			};
 
-			setSubmitted(true);
+			setListSymbol([...listSymbol, over]);
 		} catch (err) {
 			console.log(err);
 		}
@@ -100,14 +93,52 @@ const Chart = () => {
 		return {};
 	}
 
+	const deleteItem = (id) => {
+		setListSymbol(
+			listSymbol.filter((item) => {
+				return item.Symbol !== id;
+			})
+		);
+		setMappedPrice(mappedPrice.filter((item) => item.label !== id));
+	};
+
+	const makeList = () => {
+		setMappedSymbols(
+			listSymbol.map((item) => {
+				return (
+					<div className='listItem'>
+						<span className='span_list_item'>{item.Symbol}</span>
+						<span className='span_list_name'>{item.Name}</span>
+
+						<FontAwesomeIcon
+							className='delete_icon'
+							onClick={() => deleteItem(item.Symbol)}
+							icon={faTimesCircle}
+							size='2x'
+						/>
+					</div>
+				);
+			})
+		);
+	};
+
+	useEffect(() => {
+		makeList();
+		return () => {};
+	}, [listSymbol]);
+
 	return (
 		<>
 			<div className='Chart'>
 				<div className='MainChart'>
-					<div className='description'></div>
-
+					<div className='description'>
+						<span className='span_top_description'>
+							Currently on the chart:
+						</span>
+						{mappedSymbols}
+					</div>
 					<div className='chart'>
-						{submitted && (
+						{
 							<Line
 								data={states}
 								options={{
@@ -122,7 +153,7 @@ const Chart = () => {
 									},
 								}}
 							/>
-						)}
+						}
 					</div>
 					<div className='choose'>
 						<form className='form_chart' onSubmit={getData}>
@@ -131,17 +162,14 @@ const Chart = () => {
 								className='symbol'
 								value={symbol}
 								onChange={getSymbol}
-								placeholder='Symbol..'
+								placeholder='CC,BB,BK...'
 							></input>
 							<button type='submit' className='btn'>
-								Search
+								Add
 							</button>
 						</form>
 					</div>
 				</div>
-			</div>
-			<div className='Comparison'>
-				<div className='MainComparison'></div>
 			</div>
 		</>
 	);

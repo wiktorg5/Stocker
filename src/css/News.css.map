@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,2GAAI",
+    "sources": [
+        "News.scss",
+        "variables.scss"
+    ],
+    "names": [],
+    "file": "News.css"
+}

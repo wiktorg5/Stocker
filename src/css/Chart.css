@@ -5,7 +5,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: url("../images/chart.png");
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -14,6 +13,8 @@
           align-items: center;
   border-bottom: 3px solid #0099ff;
   border-top: 3px solid #0099ff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .MainChart {

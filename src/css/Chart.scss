@@ -4,11 +4,11 @@
 	width: 100vw;
 	height: 80vh;
 	display: flex;
-	background: url('../images/chart.png');
 	justify-content: center;
 	align-items: center;
 	border-bottom: 3px solid $secondary-color;
 	border-top: 3px solid $secondary-color;
+	box-sizing: border-box;
 }
 .MainChart {
 	width: 90vw;

@@ -51,5 +51,10 @@
   display: block;
   font-size: 2rem;
   font-weight: 700;
+  padding: 15px;
+}
+
+.News .news_article .news_article_header {
+  text-align: justify;
 }
 /*# sourceMappingURL=News.css.map */

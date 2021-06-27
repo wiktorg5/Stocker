@@ -199,10 +199,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding-top: 70px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .MainChart .choose .form_chart {
@@ -340,6 +344,11 @@
   display: block;
   font-size: 2rem;
   font-weight: 700;
+  padding: 15px;
+}
+
+.News .news_article .news_article_header {
+  text-align: justify;
 }
 
 .Footer {
@@ -361,5 +370,14 @@ body {
   margin: 0 !important;
   font-family: 'Roboto', sans-serif;
   background: url("../images/chart.png");
+}
+
+.span, .span_danger {
+  display: block;
+}
+
+.span_danger {
+  color: red;
+  font-size: 1.3rem;
 }
 /*# sourceMappingURL=App.css.map */

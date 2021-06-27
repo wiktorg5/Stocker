@@ -19,6 +19,8 @@ const Chart = () => {
 	const [listSymbol, setListSymbol] = useState([]);
 	const [mappedSymbols, setMappedSymbols] = useState([]);
 
+	const [isDefined, setIsDefined] = useState(true);
+
 	//links
 	let linkDaily = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${symbol}&apikey=YJ0EZ107WVSIQNS1`;
 	let linkOverview = `https://www.alphavantage.co/query?function=OVERVIEW&symbol=${symbol}&apikey=YJ0EZ107WVSIQNS1`;
@@ -42,6 +44,7 @@ const Chart = () => {
 	async function getData(e) {
 		e.preventDefault();
 		try {
+			setIsDefined(true);
 			const data = await fetch(linkDaily);
 			const daily = await data.json();
 
@@ -88,6 +91,7 @@ const Chart = () => {
 			setListSymbol([...listSymbol, over]);
 		} catch (err) {
 			console.log(err);
+			setIsDefined(false);
 		}
 
 		return {};
@@ -164,6 +168,9 @@ const Chart = () => {
 								onChange={getSymbol}
 								placeholder='CC,BB,BK...'
 							></input>
+							{!isDefined && (
+								<span className='span_danger'>This does not exist</span>
+							)}
 							<button type='submit' className='btn'>
 								Add
 							</button>

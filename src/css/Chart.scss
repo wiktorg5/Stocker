@@ -85,8 +85,9 @@
 		width: 20%;
 		height: 100%;
 		display: flex;
-		justify-content: center;
+		align-items: center;
 		padding-top: 70px;
+		flex-direction: column;
 
 		.form_chart {
 			display: flex;

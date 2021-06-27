@@ -8,3 +8,11 @@ body {
 	font-family: 'Roboto', sans-serif;
 	background: url('../images/chart.png');
 }
+.span {
+	display: block;
+}
+.span_danger {
+	@extend .span;
+	color: red;
+	font-size: 1.3rem;
+}

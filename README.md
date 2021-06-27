@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +69,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+# Stocker
+## Used Technologies
+### React.js
+### Chart.js
+### SCSS
+## About
+This app allows users to view data about stock prices from last 100 days. I am currently building comparison feature that will compare prices and create a single chart comparison.
+ 
+>>>>>>> eae01c38e1444b5f69c9891e4e6d9854cc694597

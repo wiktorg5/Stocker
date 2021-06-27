@@ -7,36 +7,38 @@ const News = () => {
 	const apiEndpoint = 'https://stocker.cdn.prismic.io/api/v2';
 	const client = Prismic.client(apiEndpoint);
 
-	const [data, setData] = useState([]);
 	const [objects, setObjects] = useState(null);
 
-	const makeObjects = () => {
-		const objects = data.map((item) => {
+	const makeObjects = async (data) => {
+		const objecty = data.map((item) => {
 			const object = {
 				title: item.data.title[0]['text'],
 			};
 
 			return object;
 		});
-		setObjects(objects);
+		setObjects(objecty);
+		return objects;
 	};
 
 	const fetchData = async () => {
+		let data = 0;
 		const response = await client.query(
 			Prismic.Predicates.at('document.type', 'article')
 		);
 		if (response) {
-			await setData(response.results);
-			makeObjects();
+			data = response.results;
+			await makeObjects(data);
 		}
 	};
 
-	window.onload = fetchData;
+	useEffect(() => {
+		fetchData();
+	}, []);
 
-	console.log(objects);
 	return (
 		<div className='News'>
-			<div className='Main_News'>{console.log(objects)}</div>
+			<div className='Main_News'>{objects && objects[0]['title']}</div>
 		</div>
 	);
 };

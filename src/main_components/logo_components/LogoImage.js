@@ -1,12 +1,12 @@
 import React from 'react';
-import '../../css/App.css'
+import '../../css/App.css';
 
 const LogoImage = () => {
-    return (
-        <div className="LogoImage">
-            <span className="LogoText">Stocker</span>
-        </div>
-    )
-}
+	return (
+		<header className='LogoImage'>
+			<span className='LogoText'>Stocker</span>
+		</header>
+	);
+};
 
-export default LogoImage
+export default LogoImage;

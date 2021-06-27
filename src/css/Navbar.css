@@ -7,5 +7,30 @@
   height: 10vh;
   background: #1a1a1a;
   z-index: 100;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Navbar .btn {
+  background: none;
+  font-size: 2rem;
+  border: none;
+  color: #0099ff;
+  font-weight: 700;
+  width: 170px;
+  height: 80%;
+  border-radius: 10px;
+}
+
+.Navbar .btn:hover {
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
 }
 /*# sourceMappingURL=Navbar.css.map */

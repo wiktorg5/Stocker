@@ -129,15 +129,15 @@ const Chart = () => {
 
 	return (
 		<>
-			<div className='Chart'>
-				<div className='MainChart'>
-					<div className='description'>
+			<section className='Chart'>
+				<article className='MainChart'>
+					<section className='description'>
 						<span className='span_top_description'>
 							Currently on the chart:
 						</span>
 						{mappedSymbols}
-					</div>
-					<div className='chart'>
+					</section>
+					<figure className='chart'>
 						{
 							<Line
 								data={states}
@@ -154,8 +154,8 @@ const Chart = () => {
 								}}
 							/>
 						}
-					</div>
-					<div className='choose'>
+					</figure>
+					<section className='choose'>
 						<form className='form_chart' onSubmit={getData}>
 							<input
 								type='text'
@@ -168,9 +168,9 @@ const Chart = () => {
 								Add
 							</button>
 						</form>
-					</div>
-				</div>
-			</div>
+					</section>
+				</article>
+			</section>
 		</>
 	);
 };

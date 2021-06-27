@@ -1,6 +1,5 @@
 import React from 'react';
 import Prismic from '@prismicio/client';
-import { Date, Link, RichText } from 'prismic-reactjs';
 import { useState, useEffect } from 'react/cjs/react.development';
 
 const News = () => {

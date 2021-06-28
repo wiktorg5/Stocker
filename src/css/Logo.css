@@ -45,6 +45,12 @@
   letter-spacing: 0.4rem;
 }
 
+@media (max-width: 800px) {
+  .LogoText {
+    font-size: 3rem;
+  }
+}
+
 .about {
   position: absolute;
   top: 20%;
@@ -62,5 +68,13 @@
   padding: 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+
+@media (max-width: 800px) {
+  .about {
+    top: 32%;
+    left: 7%;
+    height: 55%;
+  }
 }
 /*# sourceMappingURL=Logo.css.map */

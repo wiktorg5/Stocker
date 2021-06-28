@@ -34,6 +34,10 @@ $logo_image: url('../images/logo.jpg');
 	box-sizing: border-box;
 	font-weight: map-get($fonts, bold);
 	letter-spacing: 0.4rem;
+
+	@media (max-width: 800px) {
+		font-size: 3rem;
+	}
 }
 .about {
 	position: absolute;
@@ -50,4 +54,10 @@ $logo_image: url('../images/logo.jpg');
 	font-size: 3rem;
 	padding: 20px;
 	box-sizing: border-box;
+
+	@media (max-width: 800px) {
+		top: 32%;
+		left: 7%;
+		height: 55%;
+	}
 }

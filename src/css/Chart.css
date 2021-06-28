@@ -17,6 +17,12 @@
           box-sizing: border-box;
 }
 
+@media (max-width: 800px) {
+  .Chart {
+    height: 170vh;
+  }
+}
+
 .MainChart {
   width: 90vw;
   height: 90%;
@@ -26,6 +32,15 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 800px) {
+  .MainChart {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .MainChart .description {
@@ -46,6 +61,22 @@
           box-sizing: border-box;
   border-right: solid 2px #0099ff;
   overflow-y: auto;
+}
+
+@media (max-width: 800px) {
+  .MainChart .description {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    height: 50vh;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
 }
 
 .MainChart .description .span_top_description {
@@ -83,12 +114,29 @@
   border-radius: 5px;
 }
 
+@media (max-width: 800px) {
+  .MainChart .description .listItem {
+    height: 20vh;
+    min-width: 170px;
+    position: relative;
+  }
+}
+
 .MainChart .description .listItem .span_list_item {
   font-weight: 700;
 }
 
 .MainChart .description .listItem .span_list_name {
   display: block;
+}
+
+@media (max-width: 800px) {
+  .MainChart .description .listItem .span_list_name {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 60%;
+  }
 }
 
 .MainChart .description .listItem .delete_icon {
@@ -109,11 +157,21 @@
           transform: scale(0.85);
 }
 
+@media (max-width: 800px) {
+  .MainChart .description .listItem .delete_icon {
+    position: absolute;
+    right: 5%;
+    top: 40%;
+    width: 20px;
+  }
+}
+
 .MainChart .chart {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 60%;
   height: 100%;
+  margin: 0 !important;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,6 +180,14 @@
           align-items: center;
   border-right: solid 2px #0099ff;
   padding: 10px;
+}
+
+@media (max-width: 800px) {
+  .MainChart .chart {
+    border-right: none;
+    width: 100%;
+    padding: 0;
+  }
 }
 
 .MainChart .choose {
@@ -138,6 +204,12 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+@media (max-width: 800px) {
+  .MainChart .choose {
+    width: 100%;
+  }
 }
 
 .MainChart .choose .form_chart {

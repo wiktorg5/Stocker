@@ -9,6 +9,10 @@
 	border-bottom: 3px solid $secondary-color;
 	border-top: 3px solid $secondary-color;
 	box-sizing: border-box;
+
+	@media (max-width: $phone) {
+		height: 170vh;
+	}
 }
 .MainChart {
 	width: 90vw;
@@ -16,6 +20,10 @@
 	background: $primary-color;
 	box-sizing: border-box;
 	display: flex;
+
+	@media (max-width: $phone) {
+		flex-direction: column;
+	}
 
 	.description {
 		width: 20%;
@@ -27,6 +35,15 @@
 		box-sizing: border-box;
 		border-right: solid 2px $secondary-color;
 		overflow-y: auto;
+
+		@media (max-width: $phone) {
+			flex-direction: row;
+			align-items: center;
+			width: 100%;
+			height: 50vh;
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
 
 		.span_top_description {
 			color: white;
@@ -52,11 +69,24 @@
 			border: none;
 			border-radius: 5px;
 
+			@media (max-width: $phone) {
+				height: 20vh;
+				min-width: 170px;
+				position: relative;
+			}
+
 			.span_list_item {
 				font-weight: 700;
 			}
 			.span_list_name {
 				display: block;
+
+				@media (max-width: $phone) {
+					position: absolute;
+					top: 20%;
+					left: 5%;
+					width: 60%;
+				}
 			}
 
 			.delete_icon {
@@ -69,6 +99,13 @@
 				&:focus {
 					transform: scale(0.85);
 				}
+
+				@media (max-width: $phone) {
+					position: absolute;
+					right: 5%;
+					top: 40%;
+					width: 20px;
+				}
 			}
 		}
 	}
@@ -76,10 +113,17 @@
 		box-sizing: border-box;
 		width: 60%;
 		height: 100%;
+		margin: 0 !important;
 		display: flex;
 		align-items: center;
 		border-right: solid 2px $secondary-color;
 		padding: 10px;
+
+		@media (max-width: $phone) {
+			border-right: none;
+			width: 100%;
+			padding: 0;
+		}
 	}
 	.choose {
 		width: 20%;
@@ -88,6 +132,10 @@
 		align-items: center;
 		padding-top: 70px;
 		flex-direction: column;
+
+		@media (max-width: $phone) {
+			width: 100%;
+		}
 
 		.form_chart {
 			display: flex;

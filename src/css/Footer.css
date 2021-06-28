@@ -13,4 +13,25 @@
       -ms-flex-align: center;
           align-items: center;
 }
+
+.Footer .icon, .Footer .fb_icon, .Footer .ig_icon, .Footer .li_icon {
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.Footer .icon:hover, .Footer .fb_icon:hover, .Footer .ig_icon:hover, .Footer .li_icon:hover {
+  cursor: pointer;
+}
+
+.Footer .fb_icon:hover {
+  color: #0099ff;
+}
+
+.Footer .ig_icon:hover {
+  color: #dd2a7b;
+}
+
+.Footer .li_icon:hover {
+  color: #0e76a8;
+}
 /*# sourceMappingURL=Footer.css.map */

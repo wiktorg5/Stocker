@@ -1,10 +1,36 @@
-@import "./variables.scss";
+@import './variables.scss';
 
 .Footer {
-   width: 100vw;
-   height: 20vh;
-   display: flex;
-   background-color: $primary-color;
-   justify-content: space-evenly;
-   align-items: center;
+	width: 100vw;
+	height: 20vh;
+	display: flex;
+	background-color: $primary-color;
+	justify-content: space-evenly;
+	align-items: center;
+
+	.icon {
+		transition: color 0.3s ease-in-out;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.fb_icon {
+		@extend .icon;
+		&:hover {
+			color: $secondary-color;
+		}
+	}
+	.ig_icon {
+		@extend .icon;
+		&:hover {
+			color: $ig-icon-color;
+		}
+	}
+	.li_icon {
+		@extend .icon;
+		&:hover {
+			color: $li-icon-color;
+		}
+	}
 }
